@@ -547,9 +547,10 @@ En répetant cette opération autant que nécessaire on obtient :
 ```python
 >>> print(solu)
 [74, 51, 114, 51, 109, 49, 101, 95, 49, 110, 115, 49, 100, 51, 82]
->>> for i in solu:
-...     print(chr(int(i)), end="")
+>>> for i in range(len(solu)):
+...     solu[i] = chr(int(solu[i]))
 ... 
+>>> print("".join(solu))
 J3r3m1e_1ns1d3R
 ```
 
