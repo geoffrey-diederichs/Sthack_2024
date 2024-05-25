@@ -344,7 +344,7 @@ Déchiffrons cette variable avec Python :
 Aelita
 ```
 
-Nous pouvons maintenant exécuter `pas_envie_de_t_analyser` :
+Nous pouvons maintenant définir la variable d'environnement `BCKDR` pour exécuter `pas_envie_de_t_analyser` :
 
 ```gdb
 gef➤  file 8f612a248da7de80738a208bed1d4d19a27621adf12a2f0adcf55a05af9f06a0 
