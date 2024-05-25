@@ -407,7 +407,7 @@ Le programme redemande une entrée à l'utilisateur. En explorant le code, on co
 Que l'on peut maintenant retrouver dans GDB :
 
 ```gdb
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── code:x86:64 ────
+──── code:x86:64 ────
    0x5555555556d8                  mov    QWORD PTR [rbp-0xc8], rax
    0x5555555556df                  mov    rdx, QWORD PTR [rbp-0xc8]
    0x5555555556e6                  mov    eax, 0x0
@@ -417,7 +417,7 @@ Que l'on peut maintenant retrouver dans GDB :
    0x5555555556fb                  mov    rsi, rdx
    0x5555555556fe                  mov    rdi, rax
    0x555555555701                  call   0x555555555240 <munmap@plt>
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── arguments (guessed) ────
+──── arguments (guessed) ────
 *0x7ffff7fc2000 (
    $rdi = 0x00007ffff7fc2000 → 0x8d48c78948c03148,
    $rsi = 0x00007fffffffd6d0 → 0x8d48c78948c03148,
@@ -484,14 +484,14 @@ Si les bytes comparés sont différents, on jump vers un syscall interrompant le
 Sinon, l'opération se répète avec les bytes suivants. Pour récupérer le string auquel notre saisie est comparé, on peut simplement modifier cette instruction `0x7ffff7fc2036:	jne    0x7ffff7fc2068` en un `je` et récupérer le string byte par byte lorsqu'il est en mémoire : `0x7ffff7fc2034:	cmp    al,dl`. Cette étape pourrait être scripté, mais le mot de passe n'est pas très long on l'obtient rapidement :
 
 ```gdb
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── code:x86:64 ────
+──── code:x86:64 ────
  → 0x7ffff7fc2000                  xor    rax, rax
    0x7ffff7fc2003                  mov    rdi, rax
    0x7ffff7fc2006                  lea    rsi, [rip+0x73]        # 0x7ffff7fc2080
    0x7ffff7fc200d                  mov    edx, 0xf
    0x7ffff7fc2012                  syscall 
    0x7ffff7fc2014                  lea    rbx, [rip+0x65]        # 0x7ffff7fc2080
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── threads ────
+──── threads ────
 [#0] Id 1, Name: "8f612a248da7de8", stopped 0x7ffff7fc2000 in ?? (), reason: SINGLE STEP
 ```
 ```gdb
@@ -504,7 +504,7 @@ AAAA
 ```
 
 ```gdb
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── code:x86:64 ────
+──── code:x86:64 ────
    0x7ffff7fc202d                  xor    rdx, rdx
    0x7ffff7fc2030                  xor    al, BYTE PTR [rsi]
    0x7ffff7fc2032                  mov    dl, BYTE PTR [rbx]
@@ -514,7 +514,7 @@ AAAA
    0x7ffff7fc203b                  inc    rbx
    0x7ffff7fc203e                  dec    rcx
    0x7ffff7fc2041                  cmp    rcx, 0x0
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── threads ────
+──── threads ────
 [#0] Id 1, Name: "8f612a248da7de8", stopped 0x7ffff7fc2034 in ?? (), reason: BREAKPOINT
 ```
 ```gdb
@@ -524,7 +524,7 @@ gef➤  c
 Continuing.
 ```
 ```gdb
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── code:x86:64 ────
+──── code:x86:64 ────
    0x7ffff7fc202d                  xor    rdx, rdx
    0x7ffff7fc2030                  xor    al, BYTE PTR [rsi]
    0x7ffff7fc2032                  mov    dl, BYTE PTR [rbx]
@@ -534,7 +534,7 @@ Continuing.
    0x7ffff7fc203b                  inc    rbx
    0x7ffff7fc203e                  dec    rcx
    0x7ffff7fc2041                  cmp    rcx, 0x0
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── threads ────
+──── threads ────
 [#0] Id 1, Name: "8f612a248da7de8", stopped 0x7ffff7fc2034 in ?? (), reason: BREAKPOINT
 ```
 ```gdb
