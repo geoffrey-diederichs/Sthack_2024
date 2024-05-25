@@ -70,7 +70,7 @@ void main(void)
 }
 ```
 
-La fonction `main` commence par définir quelles fonctions s'occuperont des signaux 14 et 8. D'après [le man](./https://man7.org/linux/man-pages/man7/signal.7.html) de `signal` les code 14 et 8 correpondent respectivement à `SIGALRM` et `SIGFPE`. Le premier nous intéresse peu, car la fonction `handle_sigalrm` ne fait qu'afficher un message avant de relancer le programme (à moins que la fonction `system` soit exploitable plus tard) :
+La fonction `main` commence par définir quelles fonctions s'occuperont des signaux 14 et 8. D'après [le man](https://man7.org/linux/man-pages/man7/signal.7.html) de `signal` les code 14 et 8 correpondent respectivement à `SIGALRM` et `SIGFPE`. Le premier nous intéresse peu, car la fonction `handle_sigalrm` ne fait qu'afficher un message avant de relancer le programme (à moins que la fonction `system` soit exploitable plus tard) :
 
 ```C
 void handle_sigalrm(int signal)
