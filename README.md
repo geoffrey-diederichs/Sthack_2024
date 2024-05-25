@@ -542,7 +542,7 @@ gef➤  p $rax
 $11 = 0x33
 ```
 
-En répetant cette opération autant que nécessaire on obtient :
+En répétant cette opération autant que nécessaire on obtient :
 
 ```python
 >>> print(solu)
