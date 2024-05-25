@@ -398,7 +398,7 @@ test
 [Inferior 1 (process 9883) exited normally]
 ```
 
-Le programme redemande une entrée à l'utilisateur. En explorant le code, on comprend que cette entrée est demandé dans un shellcode executé ligne 83 :
+Le programme redemande une entrée à l'utilisateur. En explorant le code, on comprend que cette entrée est demandé dans un shellcode executé ligne 83 de la fonction `pas_envie_de_t_analyser` :
 
 ```C
 (*pcVar2)();
