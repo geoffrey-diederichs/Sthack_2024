@@ -105,7 +105,7 @@ void handle_sigfpe(int signal)
 }
 ```
 
-`SIGFPE` signalant une expection arithmétique, il faudra trouver dans le programme un moyen de réaliser une mauvaise opération arithmétique.
+`SIGFPE` signalant une exception arithmétique, il faudra trouver dans le programme un moyen de réaliser une mauvaise opération arithmétique.
 
 La fonction `main` affiche ensuite le menu, récupère une entrée d'un charactère et l'envoie à la fonction `handle_input` :
 
