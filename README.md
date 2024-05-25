@@ -163,7 +163,7 @@ Cette fonction réalise une opération arithmétique à partir de l'entrée de l
   ARMY_STRENGTH = 1000 / user_input;
 ```
 
-Enfin, cette varibale d'environnement `BCKDR` semble intéressante, mais n'est pas réutilisé dans le code que nous avons trouvé. En cherchant des références à cette variable dans le code nous retrouvons cette fonction :
+Enfin, cette variable d'environnement `BCKDR` semble intéressante, mais n'est pas réutilisé dans le code que nous avons trouvé. En cherchant des références à cette variable dans le code nous retrouvons cette fonction :
 
 ```C
 void pas_envie_de_t_analyser(void)
