@@ -271,7 +271,7 @@ void __libc_csu_fini(void)
 }
 ```
 
-On peut donc exécuter `pas_envie_de_t_analyser` lorsque le programme s'interrompt en ayant précedemment attribué une valeur négative à `ARMY_STRENGHT` dans `calculate_mob_army`. Essayons maintenant d'analyser dynamiquement `pas_envie_de_t_analyser`.
+On peut donc exécuter `pas_envie_de_t_analyser` lorsque le programme s'interrompt en ayant précedemment attribué une valeur négative à `ARMY_STRENGTH` dans `calculate_mob_army`. Essayons maintenant d'analyser dynamiquement `pas_envie_de_t_analyser`.
 
 ## Analyse dynamique
 
