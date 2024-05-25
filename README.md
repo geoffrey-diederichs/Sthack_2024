@@ -157,7 +157,7 @@ void calculate_mob_army(void)
 }
 ```
 
-Cette fonction réalise une opération arithmétique à partir de l'entrée de l'utilisatuer, et sauvegarde le résultat dans la variable globale `ARMY_STRENGTH`. Nous pouvons facilement obtenir un `SIGFPE` avec cette ligne de code :
+Cette fonction réalise une opération arithmétique à partir de l'entrée de l'utilisateur, et sauvegarde le résultat dans la variable globale `ARMY_STRENGTH`. Nous pouvons facilement obtenir un `SIGFPE` avec cette ligne de code :
 
 ```C
   ARMY_STRENGTH = 1000 / user_input;
